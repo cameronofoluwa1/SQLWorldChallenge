@@ -1,0 +1,21 @@
+1. select count(name) from city where CountryCode = "usa";
+2. select population, lifeExpectancy from country where name = "Argentina";
+3. select name, lifeExpectancy from country where lifeExpectancy is not null order by lifeExpectancy desc limit 1;
+4. select ci.name, co.name from country co join city ci on co.capital=ci.id where co.name = "spain" limit 1;
+5. select cl.language, co.name from countrylanguage cl join country co on cl.countrycode=co.code where region="Southeast Asia" LIMIT 0, 1000
+6. select name from city where name like 'F%' limit 25
+7. select count(ci.name) from country co join city ci on co.code=ci.countrycode where co.name = "china" limit 1000
+8. select name, population from country  where population is not null and population > 0  order by population asc LIMIT 0, 1000
+9. select count(name) from country;
+10. select name, surfacearea from country order by surfacearea desc limit 10
+11. select ci.name, co.name  from city ci join country co on ci.countrycode=co.code  where co.name="Japan" order by co.population limit 5
+12 i: update country set HeadOfState = "Elizabeth II" where HeadOfState = "Elisabeth II"
+12 ii: select code, name from country where HeadOfState = "Elizabeth II" LIMIT 0, 1000
+13. SELECT name, sum(population /surfacearea) as ratio from country group by name order by ratio desc limit 10
+14. SELECT DISTINCT language FROM countrylanguage;
+15. select name, gnp from country order by gnp desc limit 10
+16. select count(cl.language), co.name from countrylanguage cl  join country co on cl.countrycode=co.code  group by co.name order by count(cl.language) desc limit 10
+17. select cl.language, co.name, cl.percentage from countrylanguage cl  join country co on cl.countrycode=co.code where cl.language = "German" and cl.percentage > 50 LIMIT 0, 1000
+18. select name, LifeExpectancy from country where LifeExpectancy is not null order by LifeExpectancy asc limit 1
+19. select GovernmentForm, count(GovernmentForm) from country group by GovernmentForm order by count(GovernmentForm) desc limit 3
+20. select count(name) from country where IndepYear is not null
